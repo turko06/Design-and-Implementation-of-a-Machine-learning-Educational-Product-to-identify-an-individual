@@ -1,0 +1,6 @@
+[book]
+authors = ["turko06"]
+language = "en" 
+multilingual = false
+src = "src"
+title = "project"
