@@ -2,7 +2,7 @@ import os
 import segno
 
 # Get the repository name from the environment variable
-repo_name = os.getenv('REPO_NAME')
+repo_name = "Design-and-Implementation-of-a-Machine-learning-Educational-Product-to-identify-an-individual"
 
 # Define the web address
 web_address = f"https://turko06.github.io/{repo_name}"
