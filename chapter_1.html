@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - A-Machine-learning-Educational-Product-to-identify-an-individual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="burgundy">Burgundy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="dracula">Dracula</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ecoFriend">EcoFriend</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="pinkrose">Pinkrose</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="space">Space</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sustain">Sustain</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="tokyonight">Tokyonight</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">A-Machine-learning-Educational-Product-to-identify-an-individual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="machine-learning-based-identification-system"><a class="header" href="#machine-learning-based-identification-system">Machine Learning-Based Identification System</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<h3 id="overview-of-security--identification-methods"><a class="header" href="#overview-of-security--identification-methods">Overview of Security &amp; Identification Methods</a></h3>
+<p>Security plays a crucial role in modern society, ensuring the safety of individuals and assets. Traditional identification methods include passwords, PINs, and biometric systems such as fingerprints, facial recognition, and iris scans. While effective, these conventional approaches have limitations in terms of security risks, privacy concerns, and accessibility.</p>
+<h3 id="multiple-choice-questions"><a class="header" href="#multiple-choice-questions">Multiple-Choice Questions</a></h3>
+<p><strong>What is a common limitation of traditional identification methods?</strong></p>
+<form>
+  <input type="radio" name="q1" value="A"> A) They are too advanced for public use<br>
+  <input type="radio" name="q1" value="B"> B) They pose security risks and privacy concerns <br>
+  <input type="radio" name="q1" value="C"> C) They do not require authentication<br>
+  <input type="radio" name="q1" value="D"> D) They are exclusively used in government systems<br>
+  <button type="button" onclick="checkAnswer('q1', 'B')">Submit</button>
+  <p id="q1-result"></p>
+</form>
+<h3 id="importance-of-machine-learning-in-security"><a class="header" href="#importance-of-machine-learning-in-security">Importance of Machine Learning in Security</a></h3>
+<p>Machine learning (ML) has revolutionized security systems by allowing automated pattern recognition and real-time decision-making. ML models can analyze unique behavioral and physiological traits, providing a more secure and adaptive method of identification.</p>
+<h3 id="multiple-choice-questions-1"><a class="header" href="#multiple-choice-questions-1">Multiple-Choice Questions</a></h3>
+<p><strong>How does machine learning enhance security systems?</strong></p>
+<form>
+  <input type="radio" name="q2" value="A"> A) By replacing all human security personnel<br>
+  <input type="radio" name="q2" value="B"> B) By analyzing unique behavioral and physiological traits <br>
+  <input type="radio" name="q2" value="C"> C) By requiring more passwords<br>
+  <input type="radio" name="q2" value="D"> D) By increasing reliance on traditional identification methods<br>
+  <button type="button" onclick="checkAnswer('q2', 'B')">Submit</button>
+  <p id="q2-result"></p>
+</form>
+<h2 id="background--research"><a class="header" href="#background--research">Background &amp; Research</a></h2>
+<h3 id="conventional-vs-non-conventional-identification-methods"><a class="header" href="#conventional-vs-non-conventional-identification-methods">Conventional vs. Non-Conventional Identification Methods</a></h3>
+<p>Traditional identification methods rely on fixed patterns such as biometrics, passwords, or ID cards. However, non-conventional approaches utilize less commonly explored physiological and behavioral characteristics, such as:</p>
+<ul>
+<li>Gait recognition (walking patterns)</li>
+<li>Heartbeat patterns</li>
+<li>Keystroke dynamics (typing rhythm)</li>
+<li>Motion sensor data</li>
+</ul>
+<h3 id="multiple-choice-questions-2"><a class="header" href="#multiple-choice-questions-2">Multiple-Choice Questions</a></h3>
+<p><strong>Which of the following is considered a non-conventional identification method?</strong></p>
+<form>
+  <input type="radio" name="q3" value="A"> A) Passwords<br>
+  <input type="radio" name="q3" value="B"> B) Fingerprint recognition<br>
+  <input type="radio" name="q3" value="C"> C) Gait recognition <br>
+  <input type="radio" name="q3" value="D"> D) ID cards<br>
+  <button type="button" onclick="checkAnswer('q3', 'C')">Submit</button>
+  <p id="q3-result"></p>
+</form>
+<script>
+function checkAnswer(question, correctAnswer) {
+    const options = document.getElementsByName(question);
+    let selectedAnswer = "";
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            selectedAnswer = options[i].value;
+        }
+    }
+    const resultElement = document.getElementById(question + "-result");
+    if (selectedAnswer === correctAnswer) {
+        resultElement.innerHTML = " Correct!";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerHTML = "❌ Incorrect. Try again.";
+        resultElement.style.color = "red";
+    }
+}
+</script>
+
+                    </main>
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>A-Machine-learning-Educational-Product-to-identify-an-individual</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="burgundy">Burgundy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="dracula">Dracula</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ecoFriend">EcoFriend</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="pinkrose">Pinkrose</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="space">Space</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sustain">Sustain</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="tokyonight">Tokyonight</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">A-Machine-learning-Educational-Product-to-identify-an-individual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="introduction-to-mdbook"><a class="header" href="#introduction-to-mdbook">Introduction to MdBook.</a></h1>
+<p>This mdBook will grow over the duration of this module with new labs/workshops and general content needed to test and increase your knowledge of software engineering.</p>
+<table>
+<tr>
+<td>
+<p>The mdBook accessed outside of blackboard and is mobile and tablet friendly. :</p>
+<ul>
+<li><a href="https://turko06.github.io/Design-and-Implementation-of-a-Machine-learning-Educational-Product-to-identify-an-individual/Introduction.html">https://turko06.github.io/Design-and-Implementation-of-a-Machine-learning-Educational-Product-to-identify-an-individual/</a></li>
+<li>Or scan the QR code on the right:</li>
+</ul>
+</td>
+<td>
+<p><img src="./mdbook-qr-code.png" alt="" /></p>
+</td>
+</tr>
+</table>
+<h2 id="accessibility-and-navigation"><a class="header" href="#accessibility-and-navigation">Accessibility and Navigation</a></h2>
+<p>There are several methods for navigating through the chapters (i.e., sessions).</p>
+<p>The <strong>sidebar</strong> on the left provides a list of all chapters/sessions.
+Clicking on any of the chapter/session titles will load that page.</p>
+<p>The sidebar may not automatically appear if the window is too narrow, particularly on mobile displays.
+In that situation, the menu icon (<i class="fa fa-bars"></i>) at the top-left of the page can be pressed to open and close the sidebar.</p>
+<p>The <strong>arrow buttons</strong> at the bottom of the page can be used to navigate to the previous or the next chapter.</p>
+<p>The <strong>left and right arrow keys</strong> on the keyboard can be used to navigate to the previous or the next chapter.</p>
+<h3 id="top-menu-bar"><a class="header" href="#top-menu-bar">Top menu bar</a></h3>
+<p>The menu bar at the top of the page provides some icons for interacting with the book.
+The icons displayed will depend on the settings of how the book was generated.</p>
+<div class="table-wrapper"><table><thead><tr><th>Icon</th><th>Description</th></tr></thead><tbody>
+<tr><td><i class="fa fa-bars"></i></td><td>Opens and closes the chapter listing sidebar.</td></tr>
+<tr><td><i class="fa fa-paint-brush"></i></td><td>Opens a picker to choose a different color theme.</td></tr>
+<tr><td><i class="fa fa-search"></i></td><td>Opens a search bar for searching within the book.</td></tr>
+<tr><td><i class="fa fa-print"></i></td><td>Instructs the web browser to print the entire book.</td></tr>
+<tr><td><i class="fa fa-github"></i></td><td>Opens a link to the website that hosts the source code of the book.</td></tr>
+<tr><td><i class="fa fa-edit"></i></td><td>Opens a page to directly edit the source of the page you are currently reading.</td></tr>
+</tbody></table>
+</div>
+<p>Tapping the menu bar will scroll the page to the top.</p>
+<h3 id="search"><a class="header" href="#search">Search</a></h3>
+<p>Each book has a built-in search system.
+Pressing the search icon (<i class="fa fa-search"></i>) in the menu bar, or pressing the <code>S</code> key on the keyboard will open an input box for entering search terms.
+Typing some terms will show matching chapters and sections in real time.</p>
+<p>Clicking any of the results will jump to that section.
+The up and down arrow keys can be used to navigate the results, and enter will open the highlighted section.</p>
+<p>After loading a search result, the matching search terms will be highlighted in the text.
+Clicking a highlighted word or pressing the <code>Esc</code> key will remove the highlighting.</p>
+<p>You have the ability to change the theme of the mdBook by clicking the  icon on the top left mdBook. Additionally, there is a toggle for the table of content, and a search tool.</p>
+<h2 id="issues"><a class="header" href="#issues">Issues</a></h2>
+<p>If you notice a mistake you can notify the module team who can make the correction. You may be instructed to raise an actual github issue.</p>
+<h2 id="printing"><a class="header" href="#printing">Printing</a></h2>
+<p>Currently the mdBook is approximately 60+ pages, and the environmental impact per page ~10.2L water, 2g CO\(_2\) and 2g wood. Therefore, ~600L water, 120g CO\(_2\) and 120g wood would be needed to produce a paper copy of this mdBook.</p>
+<p>The environmental effects of paper production include deforestation, the use of enormous amounts of energy and water as well as air pollution and waste problems. Paper accounts for around 26% of total waste at landfills</p>
+<p>Therefore, please print only if this is really necessary.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="machine-learning-based-identification-system"><a class="header" href="#machine-learning-based-identification-system">Machine Learning-Based Identification System</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<h3 id="overview-of-security--identification-methods"><a class="header" href="#overview-of-security--identification-methods">Overview of Security &amp; Identification Methods</a></h3>
+<p>Security plays a crucial role in modern society, ensuring the safety of individuals and assets. Traditional identification methods include passwords, PINs, and biometric systems such as fingerprints, facial recognition, and iris scans. While effective, these conventional approaches have limitations in terms of security risks, privacy concerns, and accessibility.</p>
+<h3 id="multiple-choice-questions"><a class="header" href="#multiple-choice-questions">Multiple-Choice Questions</a></h3>
+<p><strong>What is a common limitation of traditional identification methods?</strong></p>
+<form>
+  <input type="radio" name="q1" value="A"> A) They are too advanced for public use<br>
+  <input type="radio" name="q1" value="B"> B) They pose security risks and privacy concerns <br>
+  <input type="radio" name="q1" value="C"> C) They do not require authentication<br>
+  <input type="radio" name="q1" value="D"> D) They are exclusively used in government systems<br>
+  <button type="button" onclick="checkAnswer('q1', 'B')">Submit</button>
+  <p id="q1-result"></p>
+</form>
+<h3 id="importance-of-machine-learning-in-security"><a class="header" href="#importance-of-machine-learning-in-security">Importance of Machine Learning in Security</a></h3>
+<p>Machine learning (ML) has revolutionized security systems by allowing automated pattern recognition and real-time decision-making. ML models can analyze unique behavioral and physiological traits, providing a more secure and adaptive method of identification.</p>
+<h3 id="multiple-choice-questions-1"><a class="header" href="#multiple-choice-questions-1">Multiple-Choice Questions</a></h3>
+<p><strong>How does machine learning enhance security systems?</strong></p>
+<form>
+  <input type="radio" name="q2" value="A"> A) By replacing all human security personnel<br>
+  <input type="radio" name="q2" value="B"> B) By analyzing unique behavioral and physiological traits <br>
+  <input type="radio" name="q2" value="C"> C) By requiring more passwords<br>
+  <input type="radio" name="q2" value="D"> D) By increasing reliance on traditional identification methods<br>
+  <button type="button" onclick="checkAnswer('q2', 'B')">Submit</button>
+  <p id="q2-result"></p>
+</form>
+<h2 id="background--research"><a class="header" href="#background--research">Background &amp; Research</a></h2>
+<h3 id="conventional-vs-non-conventional-identification-methods"><a class="header" href="#conventional-vs-non-conventional-identification-methods">Conventional vs. Non-Conventional Identification Methods</a></h3>
+<p>Traditional identification methods rely on fixed patterns such as biometrics, passwords, or ID cards. However, non-conventional approaches utilize less commonly explored physiological and behavioral characteristics, such as:</p>
+<ul>
+<li>Gait recognition (walking patterns)</li>
+<li>Heartbeat patterns</li>
+<li>Keystroke dynamics (typing rhythm)</li>
+<li>Motion sensor data</li>
+</ul>
+<h3 id="multiple-choice-questions-2"><a class="header" href="#multiple-choice-questions-2">Multiple-Choice Questions</a></h3>
+<p><strong>Which of the following is considered a non-conventional identification method?</strong></p>
+<form>
+  <input type="radio" name="q3" value="A"> A) Passwords<br>
+  <input type="radio" name="q3" value="B"> B) Fingerprint recognition<br>
+  <input type="radio" name="q3" value="C"> C) Gait recognition <br>
+  <input type="radio" name="q3" value="D"> D) ID cards<br>
+  <button type="button" onclick="checkAnswer('q3', 'C')">Submit</button>
+  <p id="q3-result"></p>
+</form>
+<script>
+function checkAnswer(question, correctAnswer) {
+    const options = document.getElementsByName(question);
+    let selectedAnswer = "";
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            selectedAnswer = options[i].value;
+        }
+    }
+    const resultElement = document.getElementById(question + "-result");
+    if (selectedAnswer === correctAnswer) {
+        resultElement.innerHTML = " Correct!";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerHTML = "❌ Incorrect. Try again.";
+        resultElement.style.color = "red";
+    }
+}
+</script>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="facial-recognition"><a class="header" href="#facial-recognition">Facial Recognition</a></h1>
+<hr />
+<p>Facial recognition is a fascinating field of computer vision that involves detecting, analyzing, and recognizing human faces in images or videos. Traditional approaches rely on <strong>classical image processing techniques</strong> and <strong>machine learning algorithms</strong> to achieve this. These methods are lightweight, efficient, and can run on low-power devices, making them ideal for real-time applications and educational purposes.</p>
+<p>In this chapter, we will explore the step-by-step process of traditional facial recognition, breaking it down into three main stages:</p>
+<ol>
+<li><strong>Face Detection</strong></li>
+<li><strong>Feature Extraction</strong></li>
+<li><strong>Face Recognition</strong></li>
+</ol>
+<p>Each stage will be explained in detail, with hands-on implementation guides to help you understand and apply these techniques.</p>
+<h2 id="1-face-detection"><a class="header" href="#1-face-detection">1. Face Detection</a></h2>
+<hr />
+<p>Before recognizing a face, the system must first detect the presence of a face in an image or video. Face detection is the process of identifying and locating faces within a visual input. Below, we discuss two popular methods for face detection.</p>
+<h3 id="method-1-haar-cascade-classifier-opencv"><a class="header" href="#method-1-haar-cascade-classifier-opencv">Method 1: Haar Cascade Classifier (OpenCV)</a></h3>
+<hr />
+<p>The <strong>Haar Cascade Classifier</strong> is a machine learning-based approach used to detect objects, including faces, in images. It is based on the <strong>Haar wavelet</strong> technique and uses a cascade of classifiers trained on positive and negative images. This method is fast and efficient, making it suitable for real-time applications.</p>
+<h4 id="how-it-works"><a class="header" href="#how-it-works">How It Works:</a></h4>
+<ol>
+<li>The algorithm scans the image using a sliding window.</li>
+<li>It applies a series of binary classifiers (cascade) to determine if a region contains a face.</li>
+<li>If a region passes all stages of the cascade, it is marked as a detected face.</li>
+</ol>
+<h4 id="step-by-step-implementation"><a class="header" href="#step-by-step-implementation">Step-by-Step Implementation:</a></h4>
+<ol>
+<li><strong>Install OpenCV:</strong>
+OpenCV is a powerful library for computer vision tasks. Install it using pip:
+<pre><code class="language-sh">pip install opencv-python
+
+</code></pre>
+</li>
+<li><strong>Prepare an Image:</strong>
+Save an image named face.jpg in your project folder.</li>
+</ol>
+<p>3.<strong>Write the Code:</strong>
+Create a Python script named face_detection.py and add t</p>
+<pre><code class="language-sh">import cv2
+
+# Load the pre-trained Haar Cascade model for face detection
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+
+# Load the image
+image = cv2.imread('face.jpg')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+
+# Detect faces in the image
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+# Draw rectangles around detected faces
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)  # Green rectangle
+
+# Display the result
+cv2.imshow('Face Detection', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+</code></pre>
+<ol start="4">
+<li><strong>Run the Script:</strong>
+Execute the script, and it will display the image with detected faces highlighted by green rectangles.</li>
+</ol>
+<h2 id="method-2-histogram-of-oriented-gradients-hog--support-vector-machine-svm"><a class="header" href="#method-2-histogram-of-oriented-gradients-hog--support-vector-machine-svm">Method 2: Histogram of Oriented Gradients (HOG) + Support Vector Machine (SVM)</a></h2>
+<hr />
+<p>The HOG + SVM method is another popular approach for face detection. HOG extracts gradient-based features from the image, and SVM classifies these features to detect faces.</p>
+<p><strong>How It Works:</strong></p>
+<p>The image is divided into small cells, and gradient orientations are computed for each cell.
+A histogram of gradient orientations is created for each cell.
+These histograms are combined to form a feature vector, which is classified using SVM.</p>
+<p><strong>Step-by-Step Implementation:</strong></p>
+<ol>
+<li><strong>Install Dlib:</strong></li>
+</ol>
+<p>Dlib is a library that provides pre-trained models for face detection. Install it using pip:</p>
+<pre><code class="language-sh">pip install dlib opencv-python
+</code></pre>
+<ol start="2">
+<li><strong>Prepare an Image:</strong></li>
+</ol>
+<p>Save an image named face.jpg in your project folder.</p>
+<ol start="3">
+<li><strong>Write the Code:</strong></li>
+</ol>
+<p>Create a Python script named hog_face_detection.py and add the following code:
+python
+Co</p>
+<pre><code class="language-sh">import dlib
+import cv2
+
+# Load the pre-trained HOG + SVM face detector
+detector = dlib.get_frontal_face_detector()
+
+# Load the image
+image = cv2.imread('face.jpg')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+
+# Detect faces in the image
+faces = detector(gray)
+
+# Draw rectangles around detected faces
+for face in faces:
+    x, y, w, h = face.left(), face.top(), face.width(), face.height()
+    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)  # Green rectangle
+
+# Display the result
+cv2.imshow('HOG Face Detection', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+</code></pre>
+<ol start="4">
+<li><strong>Run the Script:</strong>
+Execute the script, and it will display the image with detected faces highlighted by green rectangles.</li>
+</ol>
+<h2 id="feature-extraction"><a class="header" href="#feature-extraction">Feature Extraction</a></h2>
+<hr />
+<p>Once a face is detected, the next step is to extract features that uniquely define the face. These features are used to distinguish one face from another.</p>
+<h2 id="method-1-facial-landmarks-dlib"><a class="header" href="#method-1-facial-landmarks-dlib"><strong>Method 1: Facial Landmarks (Dlib)</strong></a></h2>
+<p>Facial landmarks are specific points on a face, such as the corners of the eyes, nose, and mouth. Dlib provides a pre-trained model to detect 68 facial landmarks.</p>
+<p><strong>Step-by-Step Implementation:</strong></p>
+<ol>
+<li><strong>Download the Landmark Model:</strong></li>
+</ol>
+<p>Download the shape_predictor_68_face_landmarks.dat file from the Dlib repository.</p>
+<ol start="2">
+<li><strong>Write the Code:</strong></li>
+</ol>
+<p>Create a Python script named facial_landmarks.py and add the following code:</p>
+<pre><code class="language-sh">import dlib
+import cv2
+
+# Load the pre-trained face detector and facial landmark predictor
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+
+# Load the image
+image = cv2.imread('face.jpg')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+
+# Detect faces in the image
+faces = detector(gray)
+
+# Draw facial landmarks
+for face in faces:
+    landmarks = predictor(gray, face)
+    for n in range(68):
+        x, y = landmarks.part(n).x, landmarks.part(n).y
+        cv2.circle(image, (x, y), 1, (0, 255, 0), -1)  # Green dots
+
+# Display the result
+cv2.imshow('Facial Landmarks', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+</code></pre>
+<ol start="3">
+<li><strong>Run the Script:</strong>
+Execute the script, and it will display the image with 68 facial landmarks highlighted.</li>
+</ol>
+<h2 id="method-2-principal-component-analysis-pca"><a class="header" href="#method-2-principal-component-analysis-pca">Method 2: Principal Component Analysis (PCA)</a></h2>
+<hr />
+<p>PCA is a dimensionality reduction technique that extracts the most important features from a face image while reducing noise and redundancy.</p>
+<p><strong>Step-by-Step Implementation:</strong></p>
+<ol>
+<li><strong>Install Scikit-learn:</strong></li>
+</ol>
+<p>Scikit-learn is a library for machine learning. Install it using pip:</p>
+<pre><code class="language-sh">pip install scikit-learn
+</code></pre>
+<ol start="2">
+<li><strong>Write the Code:</strong>
+Create a Python script named pca_feature_extraction.py and add the following code:</li>
+</ol>
+<pre><code class="language-sh">import numpy as np
+import cv2
+from sklearn.decomposition import PCA
+
+# Load the image and convert to grayscale
+image = cv2.imread('face.jpg', 0)
+image = cv2.resize(image, (100, 100))  # Resize to a fixed size
+image_vector = image.flatten()  # Convert to a 1D vector
+
+# Apply PCA to reduce dimensionality
+pca = PCA(n_components=50)
+pca_features = pca.fit_transform([image_vector])
+
+print("Extracted Features:", pca_features)
+</code></pre>
+<ol start="3">
+<li><strong>Run the Script:</strong>
+Execute the script, and it will print the PCA-reduced features of the face image.</li>
+</ol>
+<h2 id="3-face-recognition"><a class="header" href="#3-face-recognition">3. Face Recognition</a></h2>
+<hr />
+<p>The final step is to recognize the face by comparing the extracted features with a database of known faces.</p>
+<h2 id="method-1-eigenfaces-pca--k-nearest-neighbors"><a class="header" href="#method-1-eigenfaces-pca--k-nearest-neighbors"><strong>Method 1: Eigenfaces (PCA + K-Nearest Neighbors)</strong></a></h2>
+<hr />
+<p>Eigenfaces is a technique that uses PCA to reduce the dimensionality of face images and then applies KNN for classification.</p>
+<p><strong>Step-by-Step Implementation:</strong></p>
+<ol>
+<li><strong>Install Required Libraries:</strong></li>
+</ol>
+<pre><code class="language-sh">pip install scikit-learn opencv-python numpy
+</code></pre>
+<ol start="2">
+<li><strong>Write the Code:</strong></li>
+</ol>
+<p>Create a Python script named eigenfaces_knn.py and add the following code:</p>
+<pre><code class="language-sh">import numpy as np
+import cv2
+from sklearn.decomposition import PCA
+from sklearn.neighbors import KNeighborsClassifier
+
+# Load training images
+train_images = [cv2.imread(f'face_{i}.jpg', 0) for i in range(1, 6)]
+train_images = [cv2.resize(img, (100, 100)).flatten() for img in train_images]
+
+# Labels for training images
+labels = [0, 1, 2, 3, 4]
+
+# Apply PCA
+pca = PCA(n_components=50)
+train_features = pca.fit_transform(train_images)
+
+# Train a KNN classifier
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(train_features, labels)
+
+# Load test image
+test_image = cv2.imread('test_face.jpg', 0)
+test_image = cv2.resize(test_image, (100, 100)).flatten()
+test_feature = pca.transform([test_image])
+
+# Predict identity
+predicted_label = knn.predict(test_feature)
+print(f'Predicted Person ID: {predicted_label}')
+</code></pre>
+<ol start="3">
+<li><strong>Run the Script:</strong></li>
+</ol>
+<p>Execute the script, and it will predict the identity of the test face.</p>
+<h2 id="method-2-hog--svm"><a class="header" href="#method-2-hog--svm">Method 2: HOG + SVM</a></h2>
+<hr />
+<p>HOG extracts gradient-based features, and SVM classifies the face based on these features.</p>
+<p><strong>Step-by-Step Implementation:</strong></p>
+<ol>
+<li><strong>Install Required Libraries:</strong></li>
+</ol>
+<pre><code class="language-sh">pip install scikit-image scikit-learn joblib
+</code></pre>
+<ol start="2">
+<li><strong>Write the Code:</strong></li>
+</ol>
+<p>Create a Python script named hog_svm_recognition.py and add the following code:</p>
+<pre><code class="language-sh">from skimage.feature import hog
+from sklearn.svm import SVC
+import cv2
+import joblib
+
+# Function to extract HOG features
+def extract_hog_features(image_path):
+    image = cv2.imread(image_path, 0)
+    image = cv2.resize(image, (100, 100))
+    features, _ = hog(image, pixels_per_cell=(8, 8), cells_per_block=(2, 2), visualize=True)
+    return features
+
+# Load training images and extract features
+train_features = [extract_hog_features(f'face_{i}.jpg') for i in range(1, 6)]
+labels = [0, 1, 2, 3, 4]
+
+# Train an SVM model
+svm_model = SVC(kernel='linear')
+svm_model.fit(train_features, labels)
+
+# Save the model
+joblib.dump(svm_model, 'face_recognition_svm.pkl')
+
+# Load test image and predict
+test_feature = extract_hog_features('test_face.jpg')
+predicted_label = svm_model.predict([test_feature])
+print(f'Predicted Person ID: {predicted_label}')
+</code></pre>
+<ol start="3">
+<li><strong>Run the Script:</strong></li>
+</ol>
+<p>Execute the script, and it will predict the identity of the test face.</p>
+<h3 id="why-traditional-methods"><a class="header" href="#why-traditional-methods"><strong>Why Traditional Methods?</strong></a></h3>
+<hr />
+<p>While deep learning has revolutionized facial recognition, traditional computer vision methods remain relevant for several reasons:</p>
+<ul>
+<li><strong>Lightweight:</strong> They can run on low-power devices, making them suitable for embedded systems.</li>
+<li><strong>Interpretable:</strong> The steps (e.g., Haar features, HOG gradients) are easy to understand, making them ideal for educational purposes.</li>
+<li><strong>Data Efficiency:</strong> They require less data compared to deep learning models, which often need large datasets for training.</li>
+</ul>
+<h3 id="comparison-traditional-vs-deep-learning-methods"><a class="header" href="#comparison-traditional-vs-deep-learning-methods"><strong>Comparison: Traditional vs. Deep Learning Methods</strong></a></h3>
+<hr />
+<div class="table-wrapper"><table><thead><tr><th><strong>Aspect</strong></th><th><strong>Traditional Methods</strong></th><th><strong>Deep Learning Methods</strong></th></tr></thead><tbody>
+<tr><td><strong>Accuracy</strong></td><td>Moderate</td><td>High</td></tr>
+<tr><td><strong>Speed</strong></td><td>Fast</td><td>Slower (requires GPUs)</td></tr>
+<tr><td><strong>Data Requirements</strong></td><td>Low</td><td>High</td></tr>
+<tr><td><strong>Hardware Requirements</strong></td><td>Low-power devices</td><td>GPUs/TPUs</td></tr>
+<tr><td><strong>Interpretability</strong></td><td>High</td><td>Low (black-box models)</td></tr>
+</tbody></table>
+</div>
+<h3 id="evaluation-metrics"><a class="header" href="#evaluation-metrics"><strong>Evaluation Metrics</strong></a></h3>
+<hr />
+<p>To assess the performance of a facial recognition system, we use the following metrics:</p>
+<ul>
+<li><strong>Accuracy:</strong> Percentage of correctly identified faces.</li>
+<li><strong>Precision:</strong> Percentage of true positives among all predicted positives.</li>
+<li><strong>Recall:</strong> Percentage of true positives among all actual positives.</li>
+<li><strong>F1-Score:</strong> Harmonic mean of precision and recall.</li>
+<li><strong>False Acceptance Rate (FAR):</strong> Percentage of incorrect acceptances.</li>
+<li><strong>False Rejection Rate (FRR):</strong> Percentage of incorrect rejections.</li>
+</ul>
+<p>Example code for calculating accuracy:</p>
+<pre><code class="language-python">from sklearn.metrics import accuracy_score
+
+# True labels and predicted labels
+y_true = [0, 1, 2, 3, 4]
+y_pred = [0, 1, 2, 3, 4]
+
+# Calculate accuracy
+accuracy = accuracy_score(y_true, y_pred)
+print(f'Accuracy: {accuracy * 100:.2f}%')
+</code></pre>
+<h3 id="additional-feature-extraction-techniques"><a class="header" href="#additional-feature-extraction-techniques"><strong>Additional Feature Extraction Techniques</strong></a></h3>
+<hr />
+<h4 id="1-local-binary-patterns-lbp"><a class="header" href="#1-local-binary-patterns-lbp"><strong>1. Local Binary Patterns (LBP)</strong></a></h4>
+<p>LBP is a texture-based method that captures local patterns in an image. It is computationally efficient and robust to lighting changes.</p>
+<h4 id="2-gabor-filters"><a class="header" href="#2-gabor-filters"><strong>2. Gabor Filters</strong></a></h4>
+<p>Gabor filters are used to capture texture and edge information at different orientations and scales. They are particularly useful for facial feature extraction.</p>
+<h3 id="ethical-implications-of-facial-recognition"><a class="header" href="#ethical-implications-of-facial-recognition"><strong>Ethical Implications of Facial Recognition</strong></a></h3>
+<hr />
+<p>Facial recognition systems raise several ethical concerns:</p>
+<ul>
+<li><strong>Privacy:</strong> The use of facial recognition can infringe on individuals' privacy.</li>
+<li><strong>Bias:</strong> Systems may exhibit racial or gender bias, leading to unfair outcomes.</li>
+<li><strong>Security:</strong> Spoofing attacks (e.g., using photos or masks) can compromise the system.</li>
+</ul>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<hr />
+<p>In this chapter, we explored the traditional computer vision-based approach for facial recognition. We covered:</p>
+<p>Face Detection using Haar Cascades and HOG + SVM.
+Feature Extraction using Facial Landmarks and PCA.
+Face Recognition using Eigenfaces (PCA + KNN) and HOG + SVM.
+These methods are foundational and provide a strong basis for understanding more advanced techniques like deep learning-based facial recognition. By following the step-by-step implementations, you can gain hands-on experience and build your own facial recognition system</p>
+<h2 id="quiz-traditional-computer-vision-based-facial-recognition"><a class="header" href="#quiz-traditional-computer-vision-based-facial-recognition"><strong>Quiz: Traditional Computer Vision-Based Facial Recognition</strong></a></h2>
+<hr />
+<h3 id="section-1-multiple-choice-questions-mcqs"><a class="header" href="#section-1-multiple-choice-questions-mcqs"><strong>Section 1: Multiple-Choice Questions (MCQs)</strong></a></h3>
+<p><strong>1. What is the primary purpose of face detection in facial recognition systems?</strong></p>
+<form>
+  <input type="radio" name="q1" value="A"> A) To recognize the identity of a person<br>
+  <input type="radio" name="q1" value="B"> B) To locate and identify faces in an image or video<br>
+  <input type="radio" name="q1" value="C"> C) To extract facial features<br>
+  <input type="radio" name="q1" value="D"> D) To classify facial expressions<br>
+  <button type="button" onclick="checkAnswer('q1', 'B')">Submit</button>
+  <p id="q1-result"></p>
+</form>
+<p><strong>2. Which of the following is a pre-trained classifier used for face detection in OpenCV?</strong></p>
+<form>
+  <input type="radio" name="q2" value="A"> A) HOG + SVM<br>
+  <input type="radio" name="q2" value="B"> B) Eigenfaces<br>
+  <input type="radio" name="q2" value="C"> C) Haar Cascade<br>
+  <input type="radio" name="q2" value="D"> D) PCA<br>
+  <button type="button" onclick="checkAnswer('q2', 'C')">Submit</button>
+  <p id="q2-result"></p>
+</form>
+<p><strong>3. What does HOG stand for in the context of face detection?</strong></p>
+<form>
+  <input type="radio" name="q3" value="A"> A) Histogram of Oriented Gradients<br>
+  <input type="radio" name="q3" value="B"> B) High-Order Gradients<br>
+  <input type="radio" name="q3" value="C"> C) Histogram of Gradients<br>
+  <input type="radio" name="q3" value="D"> D) High-Order Gaussian<br>
+  <button type="button" onclick="checkAnswer('q3', 'A')">Submit</button>
+  <p id="q3-result"></p>
+</form>
+<p><strong>4. Which library provides a pre-trained model for detecting 68 facial landmarks?</strong></p>
+<form>
+  <input type="radio" name="q4" value="A"> A) OpenCV<br>
+  <input type="radio" name="q4" value="B"> B) Scikit-learn<br>
+  <input type="radio" name="q4" value="C"> C) Dlib<br>
+  <input type="radio" name="q4" value="D"> D) TensorFlow<br>
+  <button type="button" onclick="checkAnswer('q4', 'C')">Submit</button>
+  <p id="q4-result"></p>
+</form>
+<p><strong>5. What is the primary purpose of PCA in facial recognition?</strong></p>
+<form>
+  <input type="radio" name="q5" value="A"> A) To detect faces in an image<br>
+  <input type="radio" name="q5" value="B"> B) To reduce the dimensionality of facial features<br>
+  <input type="radio" name="q5" value="C"> C) To classify faces using SVM<br>
+  <input type="radio" name="q5" value="D"> D) To extract HOG features<br>
+  <button type="button" onclick="checkAnswer('q5', 'B')">Submit</button>
+  <p id="q5-result"></p>
+</form>
+<p><strong>6. Which algorithm is commonly used with PCA for face recognition?</strong></p>
+<form>
+  <input type="radio" name="q6" value="A"> A) Support Vector Machine (SVM)<br>
+  <input type="radio" name="q6" value="B"> B) K-Nearest Neighbors (KNN)<br>
+  <input type="radio" name="q6" value="C"> C) Convolutional Neural Network (CNN)<br>
+  <input type="radio" name="q6" value="D"> D) Random Forest<br>
+  <button type="button" onclick="checkAnswer('q6', 'B')">Submit</button>
+  <p id="q6-result"></p>
+</form>
+<p><strong>7. What is the role of SVM in the HOG + SVM method for face detection?</strong></p>
+<form>
+  <input type="radio" name="q7" value="A"> A) To extract features from the image<br>
+  <input type="radio" name="q7" value="B"> B) To classify gradient-based features<br>
+  <input type="radio" name="q7" value="C"> C) To reduce the dimensionality of the image<br>
+  <input type="radio" name="q7" value="D"> D) To detect facial landmarks<br>
+  <button type="button" onclick="checkAnswer('q7', 'B')">Submit</button>
+  <p id="q7-result"></p>
+</form>
+<script>
+function checkAnswer(question, correctAnswer) {
+    const options = document.getElementsByName(question);
+    let selectedAnswer = "";
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            selectedAnswer = options[i].value;
+        }
+    }
+    const resultElement = document.getElementById(question + "-result");
+    if (selectedAnswer === correctAnswer) {
+        resultElement.innerHTML = "✔️ Correct!";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerHTML = "❌ Incorrect. Try again.";
+        resultElement.style.color = "red";
+    }
+}
+</script>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fingerprint-recognition"><a class="header" href="#fingerprint-recognition">Fingerprint Recognition</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="iris-recognition"><a class="header" href="#iris-recognition">Iris Recognition</a></h1>
+<h2 id="introduction-1"><a class="header" href="#introduction-1"><strong>Introduction</strong></a></h2>
+<p>Iris recognition is one of the most accurate and reliable biometric identification techniques. It leverages the unique patterns in a person’s iris—such as crypts, furrows, and collarette—to verify identity. Unlike traditional biometric methods, modern iris recognition systems use <strong>deep learning and neural networks</strong> to achieve high accuracy, robustness, and adaptability in real-world applications.</p>
+<p>This section provides a <strong>comprehensive guide</strong> to designing and implementing a machine learning-based iris recognition system, focusing on <strong>non-conventional methods</strong> for security purposes.</p>
+<hr />
+<h2 id="step-1-iris-image-acquisition"><a class="header" href="#step-1-iris-image-acquisition"><strong>Step 1: Iris Image Acquisition</strong></a></h2>
+<h3 id="11-importance-of-high-quality-iris-images"><a class="header" href="#11-importance-of-high-quality-iris-images"><strong>1.1 Importance of High-Quality Iris Images</strong></a></h3>
+<p>The quality of iris images directly impacts the performance of the recognition system. High-quality images ensure accurate feature extraction and matching.</p>
+<h3 id="12-data-collection-methods"><a class="header" href="#12-data-collection-methods"><strong>1.2 Data Collection Methods</strong></a></h3>
+<h4 id="datasets-for-training"><a class="header" href="#datasets-for-training"><strong>Datasets for Training</strong></a></h4>
+<ul>
+<li><strong>CASIA-IrisV4:</strong> Contains over 50,000 iris images from 700 subjects, captured under controlled conditions.</li>
+<li><strong>UBIRIS:</strong> Focuses on noisy and less constrained environments, making it suitable for real-world applications.</li>
+<li><strong>ND-Iris-Template-Ageing Dataset:</strong> Captures iris patterns over time, useful for studying aging effects.</li>
+</ul>
+<h4 id="live-image-capture"><a class="header" href="#live-image-capture"><strong>Live Image Capture</strong></a></h4>
+<ol>
+<li><strong>Infrared (IR) Cameras:</strong> Use near-infrared (NIR) light to capture detailed iris textures, even in low-light conditions.</li>
+<li><strong>High-Resolution Cameras:</strong> Ensure fine details of the iris are captured.</li>
+<li><strong>Preprocessing During Capture:</strong> Remove reflections, noise, and occlusions (e.g., eyelids, eyelashes).</li>
+</ol>
+<h3 id="13-challenges-in-iris-image-acquisition"><a class="header" href="#13-challenges-in-iris-image-acquisition"><strong>1.3 Challenges in Iris Image Acquisition</strong></a></h3>
+<ul>
+<li><strong>Reflections and Glare:</strong> Caused by external light sources.
+<ul>
+<li><strong>Solution:</strong> Use NIR cameras and polarizing filters.</li>
+</ul>
+</li>
+<li><strong>Motion Blur:</strong> Occurs when the subject moves during capture.
+<ul>
+<li><strong>Solution:</strong> Use high-speed cameras and stabilize the subject’s head.</li>
+</ul>
+</li>
+<li><strong>Occlusions:</strong> Eyelids and eyelashes can block parts of the iris.
+<ul>
+<li><strong>Solution:</strong> Use multiple images and select the one with the least occlusion.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="step-2-iris-image-preprocessing"><a class="header" href="#step-2-iris-image-preprocessing"><strong>Step 2: Iris Image Preprocessing</strong></a></h2>
+<p>Preprocessing is essential to enhance image quality and prepare it for feature extraction.</p>
+<h3 id="21-preprocessing-techniques"><a class="header" href="#21-preprocessing-techniques"><strong>2.1 Preprocessing Techniques</strong></a></h3>
+<ol>
+<li><strong>Grayscale Conversion:</strong> Converts the image to a single channel for easier processing.</li>
+<li><strong>Noise Reduction:</strong> Removes noise and reflections using Gaussian blur or median filtering.</li>
+<li><strong>Segmentation &amp; Localization:</strong> Isolates the iris region by detecting the inner and outer boundaries (pupil and limbus).</li>
+<li><strong>Normalization:</strong> Transforms the iris region into a fixed-size rectangular format using the <strong>Rubber Sheet Model</strong>.</li>
+</ol>
+<h3 id="22-implementation-example-python--opencv"><a class="header" href="#22-implementation-example-python--opencv"><strong>2.2 Implementation Example (Python + OpenCV)</strong></a></h3>
+<pre><code class="language-python">import cv2
+import numpy as np
+
+# Load iris image
+image = cv2.imread('iris.jpg', 0)  # Load in grayscale
+
+# Apply Gaussian blur to reduce noise
+image_blur = cv2.GaussianBlur(image, (5, 5), 0)
+
+# Use Hough Circle Transform to detect iris boundaries
+circles = cv2.HoughCircles(image_blur, cv2.HOUGH_GRADIENT, dp=1, minDist=50,
+                           param1=50, param2=30, minRadius=30, maxRadius=100)
+
+# Draw detected circles (for visualization)
+if circles is not None:
+    circles = np.uint16(np.around(circles))
+    for circle in circles[0, :]:
+        center = (circle[0], circle[1])
+        radius = circle[2]
+        cv2.circle(image, center, radius, (255, 0, 0), 2)  # Draw outer boundary
+        cv2.circle(image, center, 2, (0, 255, 0), 3)       # Draw center
+
+# Display preprocessed iris image
+cv2.imshow('Preprocessed Iris', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+</code></pre>
+<h2 id="step-3-feature-extraction-using-deep-learning"><a class="header" href="#step-3-feature-extraction-using-deep-learning">Step 3: Feature Extraction Using Deep Learning</a></h2>
+<p>Traditional methods like Gabor filters are effective, but deep learning-based approaches offer superior performance for complex patterns.</p>
+<h3 id="deep-learning-feature-extraction-techniques"><a class="header" href="#deep-learning-feature-extraction-techniques">Deep Learning Feature Extraction Techniques</a></h3>
+<ol>
+<li><strong>CNN-Based Feature Extraction:</strong> Uses convolutional layers to capture high-level features from the iris.</li>
+<li><strong>Autoencoders for Feature Representation:</strong> Compresses iris features into a smaller latent space for efficient matching.</li>
+<li><strong>Wavelet Transform + CNN:</strong> Extracts multi-scale iris features.</li>
+</ol>
+<h3 id="cnn-based-feature-extraction-implementation-tensorflow--keras"><a class="header" href="#cnn-based-feature-extraction-implementation-tensorflow--keras">CNN-Based Feature Extraction Implementation (TensorFlow + Keras)</a></h3>
+<pre><code class="language-python">
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+# Define CNN model for iris feature extraction
+model = Sequential([
+    Conv2D(32, (3,3), activation='relu', input_shape=(100, 100, 1)),
+    MaxPooling2D((2,2)),
+    Conv2D(64, (3,3), activation='relu'),
+    MaxPooling2D((2,2)),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dense(64, activation='relu'),
+    Dense(32, activation='relu'),  # Feature vector of size 32
+])
+
+model.summary()
+</code></pre>
+<h2 id="step-4-model-training--classification"><a class="header" href="#step-4-model-training--classification">Step 4: Model Training &amp; Classification</a></h2>
+<p>After extracting features, we train a model to classify iris images and identify individuals.</p>
+<h3 id="41-classification-models-for-iris-recognition"><a class="header" href="#41-classification-models-for-iris-recognition">4.1 Classification Models for Iris Recognition</a></h3>
+<ol>
+<li><strong>Convolutional Neural Networks (CNNs):</strong> End-to-end learning approach for extracting and matching iris features.</li>
+<li><strong>Support Vector Machines (SVMs):</strong> Works well for high-dimensional iris feature vectors.</li>
+<li><strong>Recurrent Neural Networks (RNNs) + CNNs:</strong> Captures temporal iris variations over time.</li>
+</ol>
+<h3 id="42-training-a-cnn-classifier-with-tensorflow"><a class="header" href="#42-training-a-cnn-classifier-with-tensorflow">4.2 Training a CNN Classifier with TensorFlow</a></h3>
+<pre><code class="language-python">from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+
+# Compile model
+model.compile(optimizer=Adam(learning_rate=0.001),
+              loss=SparseCategoricalCrossentropy(),
+              metrics=['accuracy'])
+
+# Train model
+history = model.fit(train_data, train_labels, epochs=20, validation_data=(test_data, test_labels))
+
+</code></pre>
+<h2 id="step-5-iris-recognition--matching"><a class="header" href="#step-5-iris-recognition--matching">Step 5: Iris Recognition &amp; Matching</a></h2>
+<p>To recognize individuals, the system compares extracted iris features with stored templates in a database.</p>
+<h3 id="51-iris-matching-techniques"><a class="header" href="#51-iris-matching-techniques">5.1 Iris Matching Techniques</a></h3>
+<ol>
+<li><strong>Cosine Similarity:</strong> Measures how similar two iris feature vectors are.</li>
+<li><strong>Euclidean Distance:</strong> Computes the distance between two feature embeddings.</li>
+<li><strong>Triplet Loss in Deep Learning:</strong> Optimizes recognition by maximizing differences between different irises.</li>
+</ol>
+<h3 id="52-example-matching-iris-features-with-cosine-similarity"><a class="header" href="#52-example-matching-iris-features-with-cosine-similarity">5.2 Example: Matching Iris Features with Cosine Similarity</a></h3>
+<pre><code class="language-python">from sklearn.metrics.pairwise import cosine_similarity
+
+# Compute similarity between two iris feature vectors
+similarity_score = cosine_similarity(feature_vector1.reshape(1, -1), feature_vector2.reshape(1, -1))
+print(f'Similarity Score: {similarity_score[0][0]}')
+
+</code></pre>
+<h2 id="real-world-applications-of-machine-learning-based-iris-recognition"><a class="header" href="#real-world-applications-of-machine-learning-based-iris-recognition">Real-World Applications of Machine Learning-Based Iris Recognition</a></h2>
+<p>✅ <strong>Border Security &amp; Immigration:</strong> Used in e-passports and airport security.<br />
+✅ <strong>Banking &amp; Finance:</strong> Secure ATM transactions using iris authentication.<br />
+✅ <strong>Smart Devices:</strong> Iris scanning for unlocking phones and biometric access control.<br />
+✅ <strong>Healthcare:</strong> Patient identification in hospitals.</p>
+<hr />
+<h2 id="challenges--troubleshooting-tips"><a class="header" href="#challenges--troubleshooting-tips">Challenges &amp; Troubleshooting Tips</a></h2>
+<p>❌ <strong>Poor Iris Segmentation</strong> → Leads to recognition failures.<br />
+🔹 <strong>Solution:</strong> Use deep learning-based segmentation models for improved accuracy.</p>
+<p>❌ <strong>Low-Light Conditions</strong> → Affects image quality.<br />
+🔹 <strong>Solution:</strong> Use <strong>infrared cameras</strong> for consistent imaging.</p>
+<p>❌ <strong>Database Scalability Issues</strong> → Matching iris templates in large datasets is computationally expensive.<br />
+🔹 <strong>Solution:</strong> Optimize search algorithms using <strong>hashing techniques</strong> for fast retrieval.</p>
+<hr />
+<h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
+<p>This guide provides a <strong>machine learning-based approach to iris recognition</strong>, covering:</p>
+<ul>
+<li><strong>Image Acquisition &amp; Preprocessing</strong> → Using infrared imaging and noise reduction.</li>
+<li><strong>Feature Extraction with Deep Learning</strong> → CNN-based iris feature extraction.</li>
+<li><strong>Classification &amp; Matching</strong> → Training neural networks and implementing similarity metrics.</li>
+<li><strong>Real-World Applications &amp; Challenges</strong> → How iris recognition is applied in security, finance, and healthcare.</li>
+</ul>
+<p>By following this guide, you can build a robust iris recognition system for various real-world applications.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-5"><a class="header" href="#chapter-5">Chapter 5</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-6"><a class="header" href="#chapter-6">Chapter 6</a></h1>
+
+                    </main>
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
