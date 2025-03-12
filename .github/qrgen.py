@@ -5,12 +5,12 @@ import segno
 repo_name = os.getenv('REPO_NAME')
 
 # Define the web address
-web_address = f"https://uniofgreenwich.github.io/{repo_name}"
+web_address = f"https://turko06.github.io/{repo_name}"
 
 # Generate the QR code
 qr = segno.make(web_address)
 
 # Save the QR code as an image
-qr.save("content/Introduction/mdbook-qr-code.png",scale=10)
+qr.save("src/Introduction/mdbook-qr-code.png",scale=10)
 
 print("QR code generated and saved successfully.")
