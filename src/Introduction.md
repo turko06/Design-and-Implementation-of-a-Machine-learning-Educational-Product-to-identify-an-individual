@@ -1,4 +1,4 @@
-# Introduction.
+# Introduction to MdBook.
 
 This mdBook will grow over the duration of this module with new labs/workshops and general content needed to test and increase your knowledge of software engineering. 
 
@@ -8,7 +8,7 @@ This mdBook will grow over the duration of this module with new labs/workshops a
 <td>
 
 The mdBook accessed outside of blackboard and is mobile and tablet friendly. :
-- [https://uniofgreenwich.github.io/COMP1856_Exercises/](https://uniofgreenwich.github.io/COMP1856_Exercises/Introduction.html)
+- [https://turko06.github.io/Design-and-Implementation-of-a-Machine-learning-Educational-Product-to-identify-an-individual/](https://turko06.github.io/Design-and-Implementation-of-a-Machine-learning-Educational-Product-to-identify-an-individual/Introduction.html)
 - Or scan the QR code on the right:
 </td>
 <td>

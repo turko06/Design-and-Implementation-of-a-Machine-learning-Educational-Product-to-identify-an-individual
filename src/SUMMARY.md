@@ -1,12 +1,17 @@
 # Summary
 
-- [Introduction.](./Introduction.md)
+- [Introduction For MdBook.](./Introduction.md)
 
 -----
 
-- [Chapter 1](./chapter_1.md)
+- [Introduction](./chapter_1.md)
 
-- [Chapter 2](./chapter_2.md)
+- [Facial Recognition](./chapter_2.md)
 
-- [Chapter 3](./chapter/chapter_3.md)
+- [Fingerprint Recognition](./chapter_3.md)
 
+- [Iris Recognition](./chapter_4.md)
+
+- [Voice Recognition](./chapter_5.md)
+
+- [Hand Geometry Recognition](./chapter_6.md)
